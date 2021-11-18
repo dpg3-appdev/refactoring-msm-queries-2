@@ -19,4 +19,14 @@ class Character < ApplicationRecord
 
     return the_one
   end
+
+  def actor
+    key = self.movie_id
+
+    matching_set = Movie.where({ :id => key })
+
+    the_one = matching_set.at(0)
+
+    return the_one
+  end
 end
